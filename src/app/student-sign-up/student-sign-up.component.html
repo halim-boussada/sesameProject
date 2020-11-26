@@ -1,0 +1,81 @@
+<div class="card" style="width: 25rem;">
+  <div class="card-body">
+    <form [formGroup]="formStudent">
+      <div class="text-center">
+        <img
+          [src]="imgSrc"
+          width="350px"
+          height="250px"
+          (click)="uplo.click()"
+        />
+      </div>
+
+      <label>Image to Upload</label>
+      <input
+        #uplo
+        type="file"
+        class="form-control"
+        formControleName="imagelink"
+        (change)="show($event)"
+      />
+    </form>
+  </div>
+</div>
+
+<form style="margin-left: 03%; margin-right: 03%;">
+  <div class="form-row">Sign in</div>
+  <div class="form-row" style="margin-top: 03%;">
+    <div class="col">
+      <input type="text" #Fname class="form-control" placeholder="First name" />
+    </div>
+    <div class="col">
+      <input type="text" #Lname class="form-control" placeholder="Last name" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" #Email class="form-control" id="inputEmail4" />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" #Pw class="form-control" id="inputPassword4" />
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputState">Field</label>
+      <select id="inputState" #Field class="form-control">
+        <option selected>ING 4</option>
+        <option>ING 5</option>
+        <option>Buissness 3 </option>
+      </select>
+    </div>
+    <div class="col" style="margin-left: 03%;">
+      <label for="exampleFormControlFile1">Upload resume</label>
+      <input
+        type="file"
+        class="form-control-file"
+        id="exampleFormControlFile1"
+      />
+    </div>
+  </div>
+  <div class="form-row">
+    <input
+      type="number"
+      #Ntel
+      class="form-control"
+      placeholder="Numero de tel"
+    />
+  </div>
+  <div class="form-row">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      (click)="signup(Fname.value,Lname.value,Email.value,Pw.value,Field.value,Ntel.value)"
+    >
+      Sign in
+    </button>
+  </div>
+</form>

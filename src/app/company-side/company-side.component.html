@@ -1,0 +1,37 @@
+<p>company-side works!</p>
+<input
+  style="margin-top: 10%; margin-left: 30%; margin-right: 30%;"
+  type="text"
+  #company
+  placeholder="companyname"
+  class="form-control"
+  id="exampleInputEmail1"
+/>
+
+<form id="timeC">
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select #T class="form-control" id="exampleFormControlSelect2">
+      <option *ngFor=" let element of times">{{ this.element?.time }}</option>
+    </select>
+  </div>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    (click)="Booknow(T.value,company.value)"
+  >
+    Book now
+  </button>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    (click)="showcompanyBooked(company.value)"
+  >
+    showcompany times
+  </button>
+  <ul class="list-group" style="margin-top: 10%;">
+    <li class="list-group-item" *ngFor=" let element of test">
+      {{ this.element?.time }}
+    </li>
+  </ul>
+</form>

@@ -1,0 +1,35 @@
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<div class="wrapper">
+  <div class="left">
+    <img id="img" src="{{imageUrl}}" alt="user" width="100" />
+    <h4 id="name">{{name + " " + lastname}}</h4>
+    <p #field>{{class}}</p>
+  </div>
+  <div class="right">
+    <div class="info">
+      <h3>my Information</h3>
+      <div class="info_data">
+        <div class="data">
+          <h4>Email</h4>
+          <p #mail>{{email}}</p>
+        </div>
+        <div class="data">
+          <h4>Phone</h4>
+          <p #phone>{{phoneNumber}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects">
+      <h3>Mon cv</h3>
+    </div>
+    <div class="col" style="margin-left: 03%;">
+      <label for="exampleFormControlFile1">Edit your resume</label>
+      <input
+        type="file"
+        class="form-control-file"
+        id="exampleFormControlFile1"
+      />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<form id="time">
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select #date class="form-control" id="exampleFormControlSelect1">
+      <option *ngFor=" let element of select">{{ this.element?.time }}</option>
+    </select>
+  </div>
+  <button
+    type="submit"
+    class="btn btn-primary"
+    (click)="submitTime(date.value)"
+  >
+    Submit
+  </button>
+  <ul class="list-group" style="margin-top: 10%;">
+    <li class="list-group-item" *ngFor=" let element of times">
+      {{ this.element?.time }}
+    </li>
+  </ul>
+
+  <div>
+    Ajouter Lien pour les Room reservé
+
+    <select #roomid class="form-control" id="exampleFormControlSelect1">
+      <option *ngFor="let element of rooms">{{ this.element?.id }}</option>
+    </select>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      (click)="addUrl(roomid.value)"
+    >
+      ADD URL
+    </button>
+  </div>
+</form>
