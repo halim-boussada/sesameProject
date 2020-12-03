@@ -19,6 +19,12 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFireStorageModule } from "@angular/fire/storage";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { environment } from "../environments/environment";
+import { CompanybookingsComponent } from "./companybookings/companybookings.component";
+import { SbookingsComponent } from './sbookings/sbookings.component';
+import { StudenthomeComponent } from './studenthome/studenthome.component';
+import { ChomeComponent } from './chome/chome.component';
+import { ProCompanyComponent } from './pro-company/pro-company.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +39,12 @@ import { environment } from "../environments/environment";
     CompanyLoginComponent,
     StudentProfileComponent,
     CompanyProfileComponent,
+    CompanybookingsComponent,
+    SbookingsComponent,
+    StudenthomeComponent,
+    ChomeComponent,
+    ProCompanyComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

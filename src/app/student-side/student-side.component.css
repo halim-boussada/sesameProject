@@ -1,0 +1,408 @@
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+section {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+}
+nav ul {
+  display: flex;
+}
+.toggle {
+  display: none;
+}
+.myclasse {
+  width: 100%;
+  border: 2px solid #aaa;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+nav ul li a {
+  margin: 30px;
+  font-family: myriad pro regular;
+  color: #505050;
+  font-size: 80%;
+  font-weight: 700;
+}
+
+.active {
+  color: #2d2a2a;
+  font-weight: bold;
+}
+.model {
+  height: 530px;
+  position: absolute;
+  bottom: 0px;
+  left: 85%;
+  transform: translateX(-75%);
+}
+.text-container p:nth-child(1) {
+  font-family: calibri;
+  font-weight: bold;
+  color: #6d6d6d;
+  font-size: 22px;
+}
+.text-container p:nth-child(2) {
+  font-family: calibri;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+  font-size: 60px;
+}
+.text-container p:nth-child(3) {
+  font-family: myriad pro regular;
+  color: #403e3e;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.text-container p {
+  margin: 45px 0px 25px;
+  line-height: 0px;
+}
+.text-container button {
+  width: 130px;
+  height: 42px;
+  border-radius: 10px;
+  font-family: calibri;
+  font-weight: bold;
+  font-size: 14px;
+  outline: none;
+  margin: 0px 10px;
+}
+.text-container {
+  position: absolute;
+  left: 13%;
+  top: 42%;
+  transform: translate(-13%, -42%);
+}
+.hire-btn {
+  border: 2px solid #373636;
+  color: #373636;
+  background-color: transparent;
+}
+.hire-btn:hover {
+  background-color: #0b0b0b;
+  color: #fff;
+  border: none;
+}
+button:active {
+  transform: scale(1.1);
+}
+
+.ka {
+  margin: 0px;
+  padding: 0px;
+  background: #f1f1f1;
+  font-family: arial;
+  box-sizing: border-box;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+.grid-item-c {
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.card-container {
+  width: 98%;
+  height: 90%;
+  background: #fff;
+  border-radius: 2%;
+  box-shadow: 0px 1px 10px 1px rgb(224, 197, 197);
+  overflow: hidden;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+.upper-container {
+  height: 35%;
+  width: 100%;
+  background: white;
+}
+.image-container {
+  background: white;
+  width: 50%;
+  height: 100%;
+  padding: 1%;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translate(0%, 10%);
+}
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+img.avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+}
+.lower-container {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  padding: 10%;
+  text-align: center;
+}
+.lower-container h3,
+h4 {
+  box-sizing: border-box;
+  line-height: 0.6;
+  font-weight: lighter;
+}
+.lower-container h4 {
+  color: #1d1922;
+  opacity: 0.6;
+  font-weight: bold;
+  transform: translate(0%, -90%);
+}
+.lower-container p {
+  font-size: 16px;
+  color: gray;
+  margin-bottom: 30px;
+}
+.lower-container .btn {
+  padding: 12px 20px;
+  background: white;
+  border: none;
+  color: rgb(8, 8, 8);
+  border-color: #6d6d6d;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #4582f1;
+  transition: all 0.3s ease-in;
+  height: 100%;
+  width: 100%;
+  margin-top: 2%;
+}
+.lower-container .btn:hover {
+  background: transparent;
+  color: #0f0f0f;
+}
+ul.sidenav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+ul.sidenav li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+body {
+  background-color: #f6f5f5;
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  display: inline;
+  cursor: pointer;
+}
+
+a .active {
+  color: #1684a0;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  padding: 0px 5%;
+}
+nav ul {
+  display: flex;
+}
+.toggle {
+  display: none;
+}
+
+nav ul li a {
+  margin: 30px;
+  font-family: myriad pro regular;
+  color: #505050;
+  font-size: 15px;
+  font-weight: 700;
+}
+.logo {
+  height: 60%;
+  transform: translate(-250%, 0%);
+}
+.logo1 {
+  height: 100%;
+  transform: translate(-128%, 0%);
+}
+.model {
+  height: 80%;
+  position: absolute;
+  bottom: 40px;
+  left: 75%;
+}
+.text-container p:nth-child(1) {
+  font-family: calibri;
+  font-weight: bold;
+  color: #6d6d6d;
+  font-size: 22px;
+}
+.text-container p:nth-child(2) {
+  font-family: calibri;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+  font-size: 60px;
+}
+.text-container p:nth-child(3) {
+  font-family: myriad pro regular;
+  color: #403e3e;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.text-container p {
+  margin: 45px 0px 25px;
+  line-height: 0px;
+}
+.text-container button {
+  width: 130px;
+  height: 42px;
+  border-radius: 10px;
+  font-family: calibri;
+  font-weight: bold;
+  font-size: 14px;
+  outline: none;
+  margin: 0px 10px;
+}
+.text-container {
+  position: absolute;
+  left: 13%;
+  top: 42%;
+  transform: translate(-13%, -42%);
+}
+.hire-btn {
+  border: 2px solid #373636;
+  color: #373636;
+  background-color: transparent;
+}
+.down-cv {
+  background-color: #0b0b0b;
+  color: #fff;
+  border: none;
+}
+button:active {
+  transform: scale(1.1);
+}

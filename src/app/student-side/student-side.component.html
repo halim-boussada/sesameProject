@@ -1,5 +1,159 @@
-<p>student-side works!</p>
-<div class="input-group">
+<section>
+  <!--navigation------------------------->
+  <nav>
+    <!--logo-->
+
+    <img
+      style="cursor: pointer;"
+      src="../../assets/img/Logo-sesame-Corporate.png"
+      style="float: left;"
+      height="50px"
+      width="150px"
+    />
+    <!--menu-->
+    <ul>
+      <li><a class="active" (click)="home()">HOME</a></li>
+      <li><a (click)="viewbookings()">MY BOOKINGS </a></li>
+      <li><a (click)="MyProfile()">PROFILE</a></li>
+      <li><a (click)="booknow()">BOOKNOW</a></li>
+    </ul>
+    <!--bars--------------->
+    <div class="toggle"></div>
+  </nav>
+  <section style="text-align: center;">
+    <h1 style="color: rgb(94, 148, 230);">Book your interview Now</h1>
+    <p style="color: rgb(185, 185, 185); margin-left: 20%; margin-right: 20%;">
+      This plateform is created for you dear students to get your summer
+      interships remember that you should explore this opportunity to get your
+      internship, best of luck to all our students
+    </p>
+  </section>
+  <div class="grid-container">
+    <div class="grid-item" *ngFor="let element of companies">
+      <div class="card-container" style="margin-top: 25px;">
+        <div class="upper-container">
+          <div class="image-container">
+            <img src="{{this.element?.imageUrl}}" />
+          </div>
+        </div>
+        <div class="lower-container">
+          <div>
+            <h4>{{this.element?.name}}</h4>
+          </div>
+          <div>
+            <a
+              (click)="display(this.element?.name,this.element?.imageUrl)"
+              class="btn"
+              >Book now</a
+            >
+            <a (click)="vue(this.element?.email)" class="btn">learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="id01" class="modal">
+    <section
+      style="width: 50%;"
+      class="modal-content animate"
+      action="/action_page.php"
+      method="post"
+    >
+      <div class="imgcontainer">
+        <span
+          onclick="document.getElementById('id01').style.display='none'"
+          class="close"
+          title="Close Modal"
+          >&times;</span
+        >
+      </div>
+      <h1 style="color: rgb(94, 148, 230); text-align: center;">
+        Match together
+      </h1>
+      <div class="text-center">
+        <img alt="Avatar" class="avatar" [src]="userimage" />
+        <img
+          style="height: 30%; width: 20%; margin: 10%;"
+          src="../../assets/img/double-arrow.png"
+        />
+        <img alt="Avatar" class="avatar" [src]="actualCompanyImg" />
+      </div>
+
+      <p
+        style="
+          color: rgb(185, 185, 185);
+          margin-left: 20%;
+          margin-right: 20%;
+          text-align: center;
+        "
+      >
+        Who said we can only match using tinder we can use it in a professionel
+        way to match you with the best tech companyes
+      </p>
+      <p style="text-align: center; color: red; text-shadow: black;">
+        Times in red are not abailable(FULL)
+      </p>
+      <p style="text-align: center; color: orange;">
+        Orange background are times you allready booked
+      </p>
+      <div class="grid-container">
+        <div class="grid-item" *ngFor="let element of mintimes">
+          <div
+            class="myclasse"
+            [style]="coleur(this.element?.affichage,this.element?.valeur)"
+            (click)="bookforS(this.element?.id)"
+          >
+            {{this.element?.valeur}}
+          </div>
+        </div>
+      </div>
+
+      <!-- <table class="table table-bordered" style="margin-top: 10%;">
+          <tbody>
+            <tr *ngFor="let element of times">
+              <td
+                #t1
+                value="{{this.element.time.slice(0,5)}}&nbsp;-&nbsp;{{this.element.time.slice(0,3)}}15"
+                (click)="bookforS(t1.value,this.element?.time)"
+              >
+                {{this.element.time.slice(0,5)}}
+                &nbsp;-&nbsp;{{this.element.time.slice(0,3)}}15
+              </td>
+              <td
+                #t2
+                style="cursor: pointer;"
+                value="{{this.element.time.slice(0,3)}}15&nbsp;-&nbsp;{{this.element.time.slice(0,3)}}30"
+                (click)="bookforS(t2.value)"
+              >
+                {{this.element.time.slice(0,3)}}15 &nbsp;-&nbsp;
+                {{this.element.time.slice(0,3)}}30
+              </td>
+              <td
+                #t3
+                style="cursor: pointer;"
+                value="{{this.element.time.slice(0,3)}}30&nbsp;-&nbsp;{{this.element.time.slice(0,3)}}45"
+                (click)="bookforS(t3.value)"
+              >
+                {{this.element.time.slice(0,3)}}30 &nbsp;-&nbsp;
+                {{this.element.time.slice(0,3)}}45
+              </td>
+              <td
+                #t4
+                style="cursor: pointer;"
+                value="{{this.element.time.slice(0,3)}}45&nbsp;-&nbsp;{{this.element.time.slice(9,this.element.time.length)}}"
+                (click)="bookforS(t4.value)"
+              >
+                {{this.element.time.slice(0,3)}}45 &nbsp;-&nbsp;
+                {{this.element.time.slice(8,this.element.time.length)}}
+              </td>
+            </tr>
+          </tbody>
+        </table> -->
+    </section>
+  </div>
+
+  <!-- <div class="input-group">
   <div class="input-group-prepend">
     <span class="input-group-text">First and last name</span>
   </div>
@@ -79,4 +233,6 @@
       <td>{{ this.element?.roomUrl}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
+</section>
+<app-footer></app-footer>

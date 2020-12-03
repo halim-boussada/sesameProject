@@ -10,7 +10,12 @@ import { CompanySideComponent } from "./company-side/company-side.component";
 import { CompanySignupComponent } from "./company-signup/company-signup.component";
 import { CompanyLoginComponent } from "./company-login/company-login.component";
 import { CompanyProfileComponent } from "./company-profile/company-profile.component";
-
+import { CompanybookingsComponent } from "./companybookings/companybookings.component";
+import { SbookingsComponent } from "./sbookings/sbookings.component";
+import { from } from "rxjs";
+import { StudenthomeComponent } from "./studenthome/studenthome.component";
+import { ChomeComponent } from "./chome/chome.component";
+import { ProCompanyComponent } from "./pro-company/pro-company.component";
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "company", component: CompanySideComponent },
@@ -22,6 +27,11 @@ const routes: Routes = [
   { path: "signup/company", component: CompanySignupComponent },
   { path: "login/company", component: CompanyLoginComponent },
   { path: "profile/company", component: CompanyProfileComponent },
+  { path: "mybookings", component: CompanybookingsComponent },
+  { path: "sbookings", component: SbookingsComponent },
+  { path: "home/student", component: StudenthomeComponent },
+  { path: "home/company", component: ChomeComponent },
+  { path: "vue", component: ProCompanyComponent },
 ];
 
 @NgModule({

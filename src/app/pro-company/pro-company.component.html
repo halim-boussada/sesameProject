@@ -1,0 +1,230 @@
+<p>pro-company works!</p>
+<section>
+  <!--navigation------------------------->
+  <nav>
+    <!--logo-->
+    <img class="logo1" src="../../assets/img/corner_shape.png" />
+    <img class="logo" src="../../assets/img/Logo-sesame-Corporate.png" />
+    <!--menu-->
+    <ul>
+      <li><a class="active" (click)="home()">HOME</a></li>
+      <li><a (click)="viewbookings()">MY BOOKINGS </a></li>
+      <li><a (click)="MyProfile()">PROFILE</a></li>
+      <li><a (click)="booknow()">BOOKNOW</a></li>
+    </ul>
+    <!--bars--------------->
+    <div class="toggle"></div>
+  </nav>
+  <img src="{{ this.companyData?.imageUrl}}" class="center" />
+
+  <div
+    style="
+      text-align: center;
+      color: #7c795d;
+      font-family: 'Trocchi', serif;
+      font-size: 30px;
+      font-weight: normal;
+      line-height: 24px;
+      margin-top: 1%;
+    "
+  >
+    {{companyData?.name}}
+  </div>
+  <div
+    style="
+      text-align: center;
+      color: #7c795d;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 20px;
+      line-height: 16px;
+      margin-top: 1%;
+    "
+  >
+    {{companyData?.email}}
+  </div>
+  <div
+    style="
+      text-align: center;
+      color: #7c795d;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 20px;
+      line-height: 16px;
+      margin-top: 1%;
+    "
+  >
+    {{companyData?.address}}&nbsp;{{companyData?.zip}}&nbsp;{{companyData?.city}}
+  </div>
+  <div
+    style="
+      text-align: center;
+      font-size: 18px;
+      font-weight: 300;
+      color: #2c2424e7;
+      margin-top: 0, 5%;
+      margin-left: 10%;
+      margin-right: 10%;
+    "
+  >
+    {{companyData?.description}}
+  </div>
+  <img
+    src="../../assets/img/checklist.png"
+    style="
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 8%;
+      margin-top: 1%;
+    "
+  />
+  <div
+    style="
+      text-align: center;
+      color: #111;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-top: 1%;
+    "
+  >
+    Requirements
+  </div>
+  <div
+    style="
+      text-align: center;
+      font-size: 18px;
+      color: #2c2424e7;
+      margin-top: 1%;
+      margin-left: 10%;
+    "
+  >
+    {{this.companyData?.requirements}}
+  </div>
+  <img
+    src="../../assets/img/shape_blue.png"
+    style="height: 10%; transform: translate(3775%, -400%);"
+  />
+  <img
+    src="../../assets/img/bootom_corner_shape.png"
+    style="
+      display: block;
+      margin-top: 1%;
+      height: 8%;
+      transform: translate(0%, -10%);
+    "
+  />
+  <img
+    src="../../assets/img/shape_orange.png"
+    style="
+      display: block;
+      height: 10%;
+      transform: rotate(45deg);
+      transform: translate(1100%, -120%);
+    "
+  />
+</section>
+<!--text----------------------->
+
+<!--text----------------------->
+<!-- <div class="grid-container">
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+  </div>
+  
+  <!--model---------------------->
+<!-- <div class="main-panel">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 grid-margin stretch-card">
+          <div class="card">
+            <div class="profile-card">
+              <div class="profile-header">
+                <div class="cover-image">
+                  <img
+                    src="{{ this.companyData?.imageUrl}}"
+                    class="img img-fluid"
+                  />
+                </div>
+              </div>
+  
+              <div class="profile-content">
+                <div class="profile-name">{{ this.companyData?.name}}</div>
+                <span>About Us</span>
+                <p class="profile-description">
+                  {{ this.companyData?.description}}
+                </p>
+                <ul class="profile-info-list">
+                  <a href="" class="profile-info-list-item"
+                    ><i class="mdi mdi-eye"></i>LogOut</a
+                  >
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-8 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <hr />
+              <p class="card-description">Comapny info</p>
+              <ul class="about">
+                <li class="about-items">
+                  <i class="mdi mdi-account icon-sm"></i>
+                  <span class="about-item-name">address:</span>
+                  <span class="about-item-detail"
+                    >{{ this.companyData?.address}}</span
+                  >
+                </li>
+                <li class="about-items">
+                  <i class="mdi mdi-trophy-variant-outline icon-sm"></i
+                  ><span class="about-item-name">City:</span
+                  ><span class="about-item-detail">
+                    {{ this.companyData?.city}}
+                  </span>
+                </li>
+                <li class="about-items">
+                  <i class="mdi mdi-trophy-variant-outline icon-sm"></i
+                  ><span class="about-item-name">Zip:</span
+                  ><span class="about-item-detail">
+                    {{ this.companyData?.zip}}
+                  </span>
+                </li>
+              </ul>
+              <p class="card-description">Contact Information</p>
+              <ul class="about">
+                <li class="about-items">
+                  <i class="mdi mdi-map-marker icon-sm"></i>
+                  <span class="about-item-name">requirements:</span>
+                  <span class="about-item-detail">
+                    {{ this.companyData?.requirements}}
+                  </span>
+                </li>
+                <li class="about-items">
+                  <i class="mdi mdi-email-outline icon-sm"></i>
+                  <span class="about-item-name">Email:</span>
+                  <span class="about-item-detail"
+                    ><a href="">{{ this.companyData?.email}}</a></span
+                  >
+                </li>
+  
+                <a class="about-item-edit left">
+                  <i class="material-icons" (click)="viewbookings()"
+                    >view bookings</i
+                  >
+                </a>
+                <a class="about-item-edit left">
+                  <i class="material-icons" (click)="booknow()">
+                    booknow
+                  </i>
+                </a>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<app-footer></app-footer>

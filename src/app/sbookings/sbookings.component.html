@@ -1,0 +1,133 @@
+<body>
+  <section>
+    <!--navigation------------------------->
+    <nav>
+      <!--logo-->
+      <img class="logo1" src="../../assets/img/corner_shape.png" />
+      <img class="logo" src="../../assets/img/Logo-sesame-Corporate.png" />
+      <!--menu-->
+      <ul>
+        <li><a class="active" (click)="home()">HOME</a></li>
+        <li><a (click)="viewbookings()">MY BOOKINGS </a></li>
+        <li><a (click)="MyProfile()">PROFILE</a></li>
+        <li><a (click)="booknow()">BOOKNOW</a></li>
+      </ul>
+      <!--bars--------------->
+      <div class="toggle"></div>
+    </nav>
+    <img src="../../assets/img/khalil.png" class="center" />
+
+    <div
+      style="
+        text-align: center;
+        color: #7c795d;
+        font-family: 'Trocchi', serif;
+        font-size: 30px;
+        font-weight: normal;
+        line-height: 24px;
+        margin-top: 1%;
+      "
+    >
+      Welcome, {{this.name}}
+    </div>
+    <h1 style="color: rgb(94, 148, 230); text-align: center;">
+      this is your bookings table
+      <div class="grid-container">
+        <div class="grid-item" *ngFor="let elemet of mytimes">
+          <div
+            style="
+              color: #111;
+              font-family: 'Helvetica Neue', sans-serif;
+              font-size: 25px;
+              font-weight: bold;
+              letter-spacing: -1px;
+              line-height: 1;
+              text-align: center;
+              border-bottom: 1px solid rgb(134, 127, 127);
+            "
+          >
+            {{elemet.time}}
+          </div>
+          <div style="text-align: center;">
+            <img src="{{elemet.companyImg}}" class="center" />
+          </div>
+          <div
+            style="
+              color: #7c795d;
+              font-family: 'Trocchi', serif;
+              font-size: 35px;
+              font-weight: normal;
+              line-height: 48px;
+              margin: 0;
+              text-align: center;
+            "
+          >
+            {{elemet.companyBooked}}
+          </div>
+          <a
+            *ngIf="elemet.roomUrl"
+            style="
+              font-size: 20px;
+              font-weight: 300;
+              color: #2f7591;
+              margin-right: 3%;
+              margin-left: 3%;
+              text-align: center;
+              border: 1px solid rgb(66, 142, 177);
+            "
+            href="{{elemet?.roomUrl}}"
+            >{{elemet.roomUrl}}</a
+          >
+          <div
+            *ngIf="!elemet.roomUrl"
+            style="
+              font-size: 20px;
+              font-weight: 300;
+              color: #2f7591;
+              margin-right: 3%;
+              margin-left: 3%;
+              text-align: center;
+              border: 1px solid rgb(66, 142, 177);
+            "
+          >
+            waiting for admin to provide link
+          </div>
+        </div>
+      </div>
+    </h1>
+
+    <!-- <table class="table table-bordered">
+      <thead>
+        <th *ngFor="let elemet of test">
+          <tr scope="row" *ngFor="let i of this.elemet">
+            {{ i }}
+          </tr>
+        </th>
+      </thead>
+    </table> -->
+
+    <img
+      src="../../assets/img/shape_blue.png"
+      style="height: 10%; transform: translate(3775%, -400%);"
+    />
+    <img
+      src="../../assets/img/bootom_corner_shape.png"
+      style="
+        display: block;
+        margin-top: 1%;
+        height: 8%;
+        transform: translate(0%, -10%);
+      "
+    />
+    <img
+      src="../../assets/img/shape_orange.png"
+      style="
+        display: block;
+        height: 10%;
+        transform: rotate(45deg);
+        transform: translate(1100%, -120%);
+      "
+    />
+    <app-footer></app-footer>
+  </section>
+</body>

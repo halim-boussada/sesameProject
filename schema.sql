@@ -38,7 +38,13 @@ CREATE TABLE rooms (
     companyBooked varchar(30),
     roomUrl varchar(200)
 ); 
-
+-- minbooked
+CREATE TABLE minbooked(
+    id int(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    valeur varchar(20),
+    affichage int(2) DEFAULT 5,
+    company varchar(30)
+);
 
 
 
@@ -46,9 +52,10 @@ CREATE TABLE studentsBooked(
 id INT(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
 studentName varchar(50) ,
 time varchar(40) ,
-companyBooked varchar(30),
+companyBooked varchar(30),companyImg varchar(200),
 roomid int(4),
-roomUrl varchar(200)
+roomUrl varchar(200),
+resume varchar(5000)
 );
 
 -- CREATE TABLE links(
@@ -68,7 +75,6 @@ CREATE TABLE bookingTimes(
  id INT(4) NOT NULL PRIMARY KEY AUTO_INCREMENT,
  time varchar(20)
 );
-INSERT INTO students (name,lastname,email,password,imageUrl,class,phoneNumber) values ("Samy","Ben Chaalia","sami.benchaalia@sesame.com.tn","20028952","https://bit.ly/3o0cQhf","4 ING genie logiciel",95759234);
 INSERT INTO bookingTimes (time) values ("08:00 => 09:00");
 INSERT INTO bookingTimes (time) values ("09:00 => 10:00");
 INSERT INTO bookingTimes (time) values ("10:00 => 11:00");

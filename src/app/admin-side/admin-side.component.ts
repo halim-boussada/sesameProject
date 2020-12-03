@@ -19,7 +19,7 @@ export class AdminSideComponent implements OnInit {
     });
     this._http.getRooms().subscribe((data) => {
       this.rooms = data;
-      console.log("samy gj");
+      console.log("samy gj", data);
     });
     this._http.getBooking().subscribe((data) => {
       this.select = data;
@@ -34,12 +34,14 @@ export class AdminSideComponent implements OnInit {
     });
   }
   addUrl(numero) {
+    console.log(numero);
     this.room = prompt("Type here");
-    var halim = parseInt(numero);
-    var objec = { roomUrl: this.room, id: halim };
+    var id = parseInt(numero);
+    var objec = { roomUrl: this.room, id: id };
     console.log(objec);
     this._http.postRoom(objec).subscribe((data) => {
       console.log("changed");
+      this.ngOnInit();
     });
   }
 }

@@ -1,6 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { element } from "protractor";
 import { HttpService } from "../http.service";
+import { LocalService } from "../local.service";
+import { AngularFireStorage } from "@angular/fire/storage";
+import { data } from "jquery";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-company-side",
@@ -8,65 +12,109 @@ import { HttpService } from "../http.service";
   styleUrls: ["./company-side.component.css"],
 })
 export class CompanySideComponent implements OnInit {
-  constructor(private _http: HttpService) {}
+  constructor(
+    private _http: HttpService,
+    private local: LocalService,
+    private storage: AngularFireStorage,
+    private router: Router
+  ) {}
   times: any;
   date: any;
+  user: any;
   company: any;
   bookedcomp: number;
   mybookedTimes: any;
   test: any;
   rooms: any;
-  boli = false;
+  imageUrl: any = "";
+
   ngOnInit(): void {
+    var user = localStorage.getItem("connected");
+    var obj = { email: user };
+    this._http.getcompanybymail(obj).subscribe((data) => {
+      console.log(data);
+      this.user = data;
+      let pser = this.user[0];
+      console.log(pser);
+      this.company = pser.name;
+      this.imageUrl = pser.imageUrl;
+      this._http
+        .CompanyBookedTime({ companyBooked: this.company })
+        .subscribe((data) => {
+          this.test = data;
+          console.log(data);
+        });
+    });
     this._http.getTimes().subscribe((data) => {
       this.times = data;
-      console.log(data);
-    });
-    this._http.getRooms().subscribe((data) => {
-      this.rooms = data;
-      console.log(this.rooms);
-      console.log(typeof this.rooms);
-      console.log(this.rooms[0]);
     });
   }
-  Booknow(date, company) {
-    var obj = { time: date, companyBooked: company };
-    var obj1 = { companyBooked: company };
-    var n = { companyBooked: this.bookedcomp - 1, time: date };
+  Booknow(date) {
+    var obj1 = { companyBooked: this.company };
     this._http.CompanyBookedTime(obj1).subscribe((data) => {
       this.test = data;
+      console.log(this.test);
+      var boli = false;
       this.test.map((element) => {
-        this.boli = this.boli || element.time === date;
+        boli = boli || element.time === date;
       });
-      if (this.boli) {
+      if (boli) {
         alert("already booked");
       } else {
+        var t1 = date.slice(0, 5) + " - " + date.slice(0, 3) + "15";
+        var t2 = date.slice(0, 3) + "15 - " + date.slice(0, 3) + "30";
+        var t3 = date.slice(0, 3) + "30 - " + date.slice(0, 3) + "45";
+        var t4 = date.slice(0, 3) + "45 - " + date.slice(9, date.length);
+        this.insert(t1, t2, t3, t4);
+        var obj = { time: date, companyBooked: this.company };
         this._http.postRooms(obj).subscribe((data) => {
-          this.ngOnInit;
           for (let elem of this.times) {
             if (elem.time === date) {
-              console.log("elemdddaf  azfa", elem.companyBooked - 1);
               var newCb = elem.companyBooked - 1;
               var obje = {
                 companyBooked: newCb,
                 time: date,
               };
               this._http.getupdateBookedTime(obje).subscribe((data) => {
-                console.log("ahaha");
+                this.ngOnInit;
               });
-              break;
             }
           }
         });
       }
     });
   }
-  showcompanyBooked(name) {
-    var n = { companyBooked: name };
-    this._http.CompanyBookedTime(n).subscribe((data) => {
-      this.test = data;
-      console.log(data);
-      this.ngOnInit();
+  insert(t1, t2, t3, t4) {
+    var obj1 = { valeur: t1, company: this.company };
+
+    var obj2 = { valeur: t2, company: this.company };
+
+    var obj3 = { valeur: t3, company: this.company };
+
+    var obj4 = { valeur: t4, company: this.company };
+    this._http.insertMin(obj1).subscribe((data) => {
+      console.log("inserted");
     });
+    this._http.insertMin(obj2).subscribe((data) => {
+      console.log("inserted");
+    });
+    this._http.insertMin(obj3).subscribe((data) => {
+      console.log("inserted");
+    });
+    this._http.insertMin(obj4).subscribe((data) => {
+      console.log("inserted");
+    });
+  }
+  viewbookings() {
+    this.router.navigateByUrl("/mybookings");
+  }
+  booknow() {
+    this.router.navigateByUrl("/company");
+  }
+  home() {
+    this.router.navigateByUrl("/home/company");
+  }
+  MyProfile() {
+    this.router.navigateByUrl("/profile/company");
   }
 }

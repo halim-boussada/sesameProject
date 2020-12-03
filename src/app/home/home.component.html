@@ -1,7 +1,93 @@
-<p>home works!</p>
-<button type="button" class="btn btn-success" (click)="toStudent()">
-  students
-</button>
-<button type="button" class="btn btn-danger" (click)="toCompany()">
-  company
-</button>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+  <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins"
+    rel="stylesheet"
+  />
+  <!--style----->
+</head>
+<body>
+  <section>
+    <!--navigation------------------------->
+    <nav>
+      <!--logo-->
+
+      <img
+        style="cursor: pointer;"
+        src="../../assets/img/Logo-sesame-Corporate.png"
+        style="float: left;"
+        height="50px"
+        width="150px"
+      />
+      <!--menu-->
+      <ul>
+        <li><a style="cursor: pointer;" class="active">Home</a></li>
+        <li>
+          <a style="cursor: pointer;" (click)="tologinCompany()"
+            >Login as Company</a
+          >
+        </li>
+        <li>
+          <a style="cursor: pointer;" (click)="tologinStudent()"
+            >Login as Student</a
+          >
+        </li>
+      </ul>
+      <!--bars--------------->
+      <div class="toggle"></div>
+    </nav>
+    <!--text----------------------->
+    <div class="text-container">
+      <p>Welcome,</p>
+      <p>To this Edition of</p>
+      <p>Forum Entreprise <br />Let's get Started Login as</p>
+      <button class="hire-btn" (click)="tologinStudent()">Student</button>
+      <button class="hire-btn" (click)="tologinCompany()">Company</button>
+    </div>
+    <!--model---------------------->
+    <img alt="model" class="model" src="../../assets/img/khalil.png" />
+  </section>
+  <div class="container">
+    <h1 class="heading"><span>meet</span>Our Team</h1>
+
+    <div class="profiles">
+      <div class="profile">
+        <img src="../../assets/img/yosra.png" class="profile-img" />
+
+        <h3 class="user-name">Yosra Hammami</h3>
+        <h5>SuperVisor</h5>
+        <p>
+          Description here
+        </p>
+        <p>yosra.hammami@sesame.com.tn</p>
+      </div>
+      <div class="profile">
+        <img src="../../assets/img/ourTeamSamyphoto.jpg" class="profile-img" />
+
+        <h3 class="user-name">Samy BenChaalia</h3>
+        <h5>Full stack web develope</h5>
+        <p>
+          Computer engineering student at Sesame University, Founder and Coo at
+          Tynass It.
+        </p>
+        <p>sami.benchaalia@tynass.com</p>
+        <p>+216 95759234</p>
+      </div>
+      <div class="profile">
+        <img src="../../assets/img/IMG_9244.jpg" class="profile-img" />
+
+        <h3 class="user-name">Halim Boussada</h3>
+        <h5>Full stack web developer</h5>
+        <p>
+          Freshly graduated full stack web developer, also have a bachlor degree
+          in electrical engineering.
+        </p>
+        <p>halimboussada10@gmail.com</p>
+        <p>+216 58 065 605</p>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</body>
